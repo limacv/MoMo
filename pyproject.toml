@@ -27,7 +27,7 @@ classifiers = [
 # momo/diffusion/unet.py imports module paths (diffusers.models.unet_2d_blocks,
 # diffusers.models.resnet) that were relocated in later diffusers releases.
 dependencies = [
-    "numpy>=1.26.4,<2",
+    "numpy>=1.26.4",
     "torch>=2.0",
     "torchvision>=0.15",
     "einops>=0.6.1",
