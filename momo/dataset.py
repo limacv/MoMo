@@ -7,7 +7,7 @@ from random import randint
 import torch
 import numpy as np
 import cv2
-from utils import video2frames
+from momo.utils import video2frames
 
 
 class Vimeo90k(data.Dataset):

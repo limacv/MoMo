@@ -4,10 +4,10 @@ from torch.utils.data import DataLoader
 from argparse import ArgumentParser
 from accelerate import Accelerator
 from accelerate.utils import set_seed
-from dataset import Vimeo90k, SNU_FILM, Xiph, Middlebury_others
-from evaluation.validation import vfi_validate as validate
-from synthesis import SynthesisNet
-from diffusion.momo import MoMo
+from momo.dataset import Vimeo90k, SNU_FILM, Xiph, Middlebury_others
+from momo.evaluation.validation import vfi_validate as validate
+from momo.synthesis import SynthesisNet
+from momo.diffusion.momo import MoMo
 
 
 def get_exp_cfg():

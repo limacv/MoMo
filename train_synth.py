@@ -9,12 +9,12 @@ from tqdm import tqdm
 from accelerate import Accelerator
 from accelerate.utils import set_seed
 from torch_ema import ExponentialMovingAverage
-from dataset import Vimeo90k
-from evaluation.validation import recon_validate as validate
-from synthesis import SynthesisNet
-from flow import getFlowModel
-from loss import ReconLPIPSLoss
-from utils import get_device, is_best_performance, save_cfg, set_mode
+from momo.dataset import Vimeo90k
+from momo.evaluation.validation import recon_validate as validate
+from momo.synthesis import SynthesisNet
+from momo.flow import getFlowModel
+from momo.loss import ReconLPIPSLoss
+from momo.utils import get_device, is_best_performance, save_cfg, set_mode
 
 
 def get_exp_cfg():

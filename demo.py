@@ -4,11 +4,11 @@ from torch.utils.data import DataLoader
 from argparse import ArgumentParser
 from accelerate import Accelerator
 from accelerate.utils import set_seed
-from dataset import VideoData
-from synthesis import SynthesisNet
-from diffusion.momo import MoMo
+from momo.dataset import VideoData
+from momo.synthesis import SynthesisNet
+from momo.diffusion.momo import MoMo
 from tqdm import tqdm
-from utils import set_mode, frames2video, tensor2opencv
+from momo.utils import set_mode, frames2video, tensor2opencv
 import shutil
 
 

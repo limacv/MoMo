@@ -4,8 +4,8 @@ from einops import rearrange
 from torchvision.transforms.functional import to_pil_image
 from tqdm import tqdm
 from torchvision.utils import flow_to_image
-from utils import set_mode
-from evaluation.metrics import Evaluate
+from momo.utils import set_mode
+from momo.evaluation.metrics import Evaluate
 
 
 @ torch.no_grad()

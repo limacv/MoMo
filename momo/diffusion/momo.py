@@ -4,7 +4,7 @@ from einops import rearrange
 from torch.nn.functional import l1_loss, interpolate
 from diffusers.schedulers.scheduling_ddpm import DDPMScheduler
 import numpy as np
-from diffusion.unet import ConvexUpUNet2DModel
+from momo.diffusion.unet import ConvexUpUNet2DModel
 from torch.nn.functional import pad
 
 

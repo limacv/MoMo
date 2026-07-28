@@ -1,1 +1,8 @@
 **/.DS_Store
+
+# Python build / packaging artifacts
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/

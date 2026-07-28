@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from flow import BackWarp
+from momo.flow import BackWarp
 from einops import rearrange
 import numpy as np
 from torch.nn.functional import interpolate, l1_loss

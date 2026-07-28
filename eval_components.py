@@ -4,10 +4,10 @@ from torch.utils.data import DataLoader
 from argparse import ArgumentParser
 from accelerate import Accelerator
 from accelerate.utils import set_seed
-from dataset import Vimeo90k
-from evaluation.validation import recon_validate as validate
-from synthesis import SynthesisNet
-from flow import getFlowModel
+from momo.dataset import Vimeo90k
+from momo.evaluation.validation import recon_validate as validate
+from momo.synthesis import SynthesisNet
+from momo.flow import getFlowModel
 
 
 def get_exp_cfg():

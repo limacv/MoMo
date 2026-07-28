@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "momo-vfi"
+version = "0.1.0"
+description = "MoMo: Disentangled Motion Modeling for Video Frame Interpolation (AAAI 2025)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Seonghyeon Nam and Jinyoung Choi" },
+]
+keywords = ["frame-interpolation", "video", "diffusion", "machine-learning", "pytorch"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Core dependencies: everything needed to `from momo import Predictor` and run
+# x2 interpolation inference (demo.py). diffusers is pinned because
+# momo/diffusion/unet.py imports module paths (diffusers.models.unet_2d_blocks,
+# diffusers.models.resnet) that were relocated in later diffusers releases.
+dependencies = [
+    "numpy>=1.26.4,<2",
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "einops>=0.6.1",
+    "diffusers==0.24.0",
+    # diffusers 0.24 references huggingface_hub symbols (hf_cache_home) removed
+    # in hub >=0.26; accelerate is pinned to the same era so its hub requirement
+    # stays compatible with the pin below.
+    "huggingface_hub==0.19.4",
+    "accelerate==0.23.0",
+    "opencv-python>=4.10.0.82",
+    "imageio>=2.30",
+    "tqdm>=4.64",
+]
+
+[project.optional-dependencies]
+# Extra dependencies required only for training and full-metric evaluation.
+train = [
+    "lpips>=0.1.4",
+    "DISTS-pytorch>=0.1",
+    "tensorboard>=2.14.1",
+    "torch-ema>=0.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/JHLew/MoMo"
+Repository = "https://github.com/JHLew/MoMo"
+
+[tool.setuptools.packages.find]
+include = ["momo*"]
